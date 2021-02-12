@@ -10,11 +10,11 @@ const questions1 = require('./src/teamQuestions');
 async function init() {
     try {
         const userData = await inquirer.prompt(questions1);
-
+    console.log('What are the responses', userData);
         // userData.license = renderLicenseLink(userData.license);;
 
         // const readmeNew = buildHTMLTemplate(userData);
-
+        
 
         // fs.writeFileSync('./readmeNew.md', readmeNew);
         // if (userData.licenseB === 'MIT') {
