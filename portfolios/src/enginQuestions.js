@@ -24,3 +24,5 @@ const questionsEngin = [
 
     
 ];
+
+module.exports = questionsEngin

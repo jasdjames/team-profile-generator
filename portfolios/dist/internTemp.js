@@ -1,5 +1,6 @@
-const internCard =
-`<div class="card m-3" style="width: 18rem;">
+const internCard = (intern) => {
+var card =
+    `<div class="card m-3" style="width: 18rem;">
 <h5 class="card-header">${intern.name}</h5>
 <div class="card-body">
     <h5 class="card-title">${intern.role}</h5>
@@ -11,3 +12,7 @@ const internCard =
 
 </div>
 </div>`
+return card 
+}
+
+module.exports = internCard

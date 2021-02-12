@@ -23,3 +23,4 @@ const questionsIntern = [
 
     
 ];
+module.exports = questionsIntern

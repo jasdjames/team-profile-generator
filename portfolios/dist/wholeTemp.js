@@ -23,7 +23,7 @@ const wholeTemp =
     </nav>
 
     <div id="cardHere">
-    ${managerTemp}
+    ${userData}
    
 
     </div>
@@ -46,6 +46,7 @@ const wholeTemp =
 </body>
 
 </html>`
+return wholeTemp
 }
 
 module.exports = buildHTMLTemplate
