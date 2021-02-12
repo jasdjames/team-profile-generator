@@ -11,7 +11,6 @@ const managerCard = require('./dist/managerTemp')
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern')
-// const managerCard = require('./dist/managerTemp')
 const buildHTMLTemplate = require('./dist/wholeTemp')
 const team = []
 
@@ -60,11 +59,9 @@ async function askTeamQs() {
 
 
 }
-
+// Tutor helped me recognize that this should be a function that pushed the information from the card into a array 
 const buildPage = () => {
 
-    // manager.push(new Manager(`${userData.managerName}`,`${userData.managerId}`, `${userData.managerEmail}`,`${userData.managerOffice}`))
-    //     console.log('????', manager);
 
     var allTheCards = []
 
@@ -86,7 +83,6 @@ const buildPage = () => {
     }
 
    
-    // var joinedCards = allTheCards.join(',')
     // Add the information to a card on HTML 
 
     const myTeam = buildHTMLTemplate(allTheCards);
@@ -96,38 +92,4 @@ const buildPage = () => {
 }
 
 init();
-
-// async function menuQ() {
-//     try {
-
-//         const userMenu = await inquirer.prompt(menu);
-//     console.log('What did they choose', userMenu);
-
-//     if (userMenu.menu === 'Add an Engineer'){
-//         // switch case instead of if /else ?? 
-//         //answer engineer questions - make new Engineer // append to HTML id = "cardHere"// maybe write file here instead to write everything together 
-//     }
-
-//     }
-//     catch (error) {
-//         console.log(error);
-//     }
-
-
-// }
-// menuQ();
-
-
-
-// OLD CODE EXAMPLE 
-// if (userData.licenseB === 'MIT') {
-        //     fs.appendFileSync('./readmeNew.md', (LicenceInfo.MIT))
-        // } else if (userData.licenseB === 'Apache 2.0') {
-        //     fs.appendFileSync('./readmeNew.md', (LicenceInfo.Apache))
-        // } else if (userData.licenseB === 'GNU GPLv.3') {
-        //     fs.appendFileSync('./readmeNew.md', (LicenceInfo.GNU))
-        // } else {
-        //     fs.appendFileSync('./readmeNEW.md', (LicenceInfo.Un));
-
-        //     console.log('File was successfully written.');
 
