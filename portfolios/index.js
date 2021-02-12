@@ -2,6 +2,8 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const questions1 = require('./src/teamQuestions');
+const menu = require ('./src/menuQuestion');
+const Manager = require('./lib/Manager');
 // const buildHTMLTemplate = require('./utils/template');
 // const renderLicenseLink = require('./utils/generateMarkdown');
 // const LicenceInfo = require('./utils/licenseInfo')
@@ -11,22 +13,14 @@ async function init() {
     try {
         const userData = await inquirer.prompt(questions1);
     console.log('What are the responses', userData);
-        // userData.license = renderLicenseLink(userData.license);;
-
-        // const readmeNew = buildHTMLTemplate(userData);
+    
+        const manager = new Manager(`${userData.managerName}`,`${userData.managerId}`, `${userData.managerEmail}`,`${userData.managerOffice}`);
+        console.log('????', manager);
+        const managerCard = buildHTMLTemplate(userData);
         
 
-        // fs.writeFileSync('./readmeNew.md', readmeNew);
-        // if (userData.licenseB === 'MIT') {
-        //     fs.appendFileSync('./readmeNew.md', (LicenceInfo.MIT))
-        // } else if (userData.licenseB === 'Apache 2.0') {
-        //     fs.appendFileSync('./readmeNew.md', (LicenceInfo.Apache))
-        // } else if (userData.licenseB === 'GNU GPLv.3') {
-        //     fs.appendFileSync('./readmeNew.md', (LicenceInfo.GNU))
-        // } else {
-        //     fs.appendFileSync('./readmeNEW.md', (LicenceInfo.Un));
-
-        //     console.log('File was successfully written.');
+        fs.writeFileSync('./teamProfile.html', managerCard);
+       
 
         // }
     }
@@ -40,3 +34,35 @@ async function init() {
 
 init();
 
+// async function menuQ() {
+//     try {
+      
+//         const userMenu = await inquirer.prompt(menu);
+//     console.log('What did they choose', userMenu);
+
+//     if (userMenu.menu === 'Add an Engineer'){
+//         //answer engineer questions - make new Engineer 
+//     }
+   
+//     }
+//     catch (error) {
+//         console.log(error);
+//     }
+
+
+// }
+// menuQ();
+
+
+
+// OLD CODE EXAMPLE 
+// if (userData.licenseB === 'MIT') {
+        //     fs.appendFileSync('./readmeNew.md', (LicenceInfo.MIT))
+        // } else if (userData.licenseB === 'Apache 2.0') {
+        //     fs.appendFileSync('./readmeNew.md', (LicenceInfo.Apache))
+        // } else if (userData.licenseB === 'GNU GPLv.3') {
+        //     fs.appendFileSync('./readmeNew.md', (LicenceInfo.GNU))
+        // } else {
+        //     fs.appendFileSync('./readmeNEW.md', (LicenceInfo.Un));
+
+        //     console.log('File was successfully written.');

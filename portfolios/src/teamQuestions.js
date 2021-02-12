@@ -13,13 +13,16 @@ const questions1 = [
     {
         type: 'input',
         message: 'What is the team manager\'s email address?',
-        name: 'mangerEmail',
+        name: 'managerEmail',
     },
     {
         type: 'input',
         message: 'What is the manager\'s office number?',
         name: 'managerOffice',
+
+        // Would you like to add an intern or engineer to your team? 
     }
+
     
 ];
 
