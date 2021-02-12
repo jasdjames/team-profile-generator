@@ -4,26 +4,28 @@ const fs = require('fs');
 const questions1 = require('./src/teamQuestions');
 const menu = require ('./src/menuQuestion');
 const Manager = require('./lib/Manager');
-// const buildHTMLTemplate = require('./utils/template');
-// const renderLicenseLink = require('./utils/generateMarkdown');
-// const LicenceInfo = require('./utils/licenseInfo')
+// const managerCard = require('./dist/managerTemp')
+const buildHTMLTemplate = require('./dist/wholeTemp')
+const manager = []
 
 // TODO: Create an array of questions for user input
 async function init() {
     try {
         const userData = await inquirer.prompt(questions1);
     console.log('What are the responses', userData);
-    
-        const manager = new Manager(`${userData.managerName}`,`${userData.managerId}`, `${userData.managerEmail}`,`${userData.managerOffice}`);
+        
+        manager.push(new Manager(`${userData.managerName}`,`${userData.managerId}`, `${userData.managerEmail}`,`${userData.managerOffice}`))
         console.log('????', manager);
-        const managerCard = buildHTMLTemplate(userData);
+
+        // Add the information to a card on HTML 
+        const myTeam = buildHTMLTemplate(userData);
         
 
-        fs.writeFileSync('./teamProfile.html', managerCard);
+        fs.writeFileSync('./teamProfile.html', myTeam);
        
 
-        // }
-    }
+        }
+    // }
     catch (error) {
         console.log(error);
     }
@@ -66,3 +68,4 @@ init();
         //     fs.appendFileSync('./readmeNEW.md', (LicenceInfo.Un));
 
         //     console.log('File was successfully written.');
+
