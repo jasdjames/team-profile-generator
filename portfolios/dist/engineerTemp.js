@@ -1,7 +1,7 @@
 const engineerCard = (engineer) => {
 
     var card = `<div class="card m-3" style="width: 18rem;">
-    <h5 class="card-header">${engineer.name}</h5>
+    <h5 class="card-header bg-primary">${engineer.name}</h5>
     <div class="card-body">
         <h5 class="card-title">${engineer.role}</h5>
         <ul class="list-group list-group-flush">

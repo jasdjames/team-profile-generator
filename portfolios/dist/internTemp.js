@@ -1,7 +1,7 @@
 const internCard = (intern) => {
 var card =
     `<div class="card m-3" style="width: 18rem;">
-<h5 class="card-header">${intern.name}</h5>
+<h5 class="card-header bg-success">${intern.name}</h5>
 <div class="card-body">
     <h5 class="card-title">${intern.role}</h5>
     <ul class="list-group list-group-flush">

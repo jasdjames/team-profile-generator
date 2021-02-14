@@ -17,17 +17,19 @@ const wholeTemp =
     <title>My Team</title>
 </head>
 
-<body>
+<body class ="bg-dark">
     <nav class="navbar navbar-light bg-warning d-flex justify-content-center" id="nav">
         <h1 class="display-1">My Team</h1>
     </nav>
 
+    <div class="card-deck"> 
     <div class="col-4 mb-3" id="cardHere">
     ${userData}
    
 
     </div>
-
+    </div>
+    
 
 
 

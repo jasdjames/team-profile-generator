@@ -1,8 +1,9 @@
 
 const managerCard = (manager) => {
     var card =
-`<div class="card m-3" style="width: 18rem;">
-<h5 class="card-header">${manager.name}</h5>
+`
+<div class="card m-3 " style="width: 18rem;">
+<h5 class="card-header bg-danger">${manager.name}</h5>
 <div class="card-body">
     <h5 class="card-title">${manager.role}</h5>
     <ul class="list-group list-group-flush">
@@ -11,6 +12,7 @@ const managerCard = (manager) => {
         <li class="list-group-item"> Office Number: ${manager.officeNumber}</li>
     </ul>
 
+    </div>
 </div>
 </div>`
 return card

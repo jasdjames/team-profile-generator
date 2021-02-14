@@ -85,7 +85,7 @@ const buildPage = () => {
    
     // Add the information to a card on HTML 
 
-    const myTeam = buildHTMLTemplate(allTheCards);
+    const myTeam = buildHTMLTemplate(allTheCards.join(''));
 
 
     fs.writeFileSync('./teamProfile.html', myTeam);
