@@ -22,7 +22,7 @@ const wholeTemp =
         <h1 class="display-1">My Team</h1>
     </nav>
 
-    <div id="cardHere">
+    <div class="col-4 mb-3" id="cardHere">
     ${userData}
    
 
